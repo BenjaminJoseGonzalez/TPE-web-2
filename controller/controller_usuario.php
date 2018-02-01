@@ -47,10 +47,12 @@ class UsuarioController extends Controller{
 	}
 
 	function agregarUsuario(){
-		if(isset($_REQUEST['usuario']) && isset($_REQUEST['contraseña'])){
+		if(isset($_REQUEST['usuario']) && isset($_REQUEST['pasword'])){
+			
 		    $usuario = $_REQUEST['usuario'];
-		    $contrasenia = $_REQUEST['contraseña'];
-		    $this->model->agragarUsuario($usuario,$contrasenia);
+			$password = $_REQUEST['pasword'];
+			echo ($usuario + "sdd");
+		    $this->model->agregarUsuario($usuario,$password);
 
 		}
     

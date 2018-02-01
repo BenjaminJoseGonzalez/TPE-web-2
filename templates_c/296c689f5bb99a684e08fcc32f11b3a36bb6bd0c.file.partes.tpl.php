@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2017-02-22 01:38:34
+<?php /* Smarty version Smarty-3.1.14, created on 2018-02-01 00:40:36
          compiled from ".\templates\partes.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:2039158acdd8ae38380-69927353%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:238665a7253f4124113-12057193%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '296c689f5bb99a684e08fcc32f11b3a36bb6bd0c' => 
     array (
       0 => '.\\templates\\partes.tpl',
-      1 => 1487553072,
+      1 => 1517437294,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2039158acdd8ae38380-69927353',
+  'nocache_hash' => '238665a7253f4124113-12057193',
   'function' => 
   array (
   ),
@@ -25,10 +25,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58acdd8aea1ab2_46037133',
+  'unifunc' => 'content_5a7253f41d4d22_17150142',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58acdd8aea1ab2_46037133')) {function content_58acdd8aea1ab2_46037133($_smarty_tpl) {?><article>
-  <table class="table">
+<?php if ($_valid && !is_callable('content_5a7253f41d4d22_17150142')) {function content_5a7253f41d4d22_17150142($_smarty_tpl) {?><article>
+  <table class="table table-responsive">
     <thead>
       <th>Imagen</th>
       <th>Producto</th>
@@ -86,8 +86,7 @@ $_smarty_tpl->tpl_vars['comentario']->_loop = true;
         <option val="4">4</option>
         <option val="5">5</option>
       </select>
-      <a Href="" class="button"  id="btn-enviarComentario">enviar</a>
-  </form>
-   <?php }?>
-
+      <a Href="" class="btn btn-outline-secondary"  id="btn-enviarComentario">enviar</a>
+    </form>
+  <?php }?>
 </article><?php }} ?>

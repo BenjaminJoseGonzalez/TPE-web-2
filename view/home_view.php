@@ -41,6 +41,9 @@
 		function registrarse(){
 			$this->smarty->display('registrar.tpl');
 		}
+		function iniciaSesion(){
+			$this->smarty->display('login.tpl');
+		}
 	}
 
 ?>

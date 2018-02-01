@@ -27,13 +27,13 @@
           <label >¿Que lugar recomienda?</label>
           <input type="text" class="text-box" id="recomendacion" name="recomendacion" placeholder="spot">
         </div>
-
-        <a Href="" class="button"  id="btn-contacto">Enviar</a>
+        <br>
+        <a Href="" class="btn btn-outline-secondary"  id="btn-contacto">Enviar</a>
 
       </form>
     </div>
 
-      <table class="table">
+      <table class="table table-responsive">
         <thead>
             <th>nombre</th>
             <th>apellido</th>

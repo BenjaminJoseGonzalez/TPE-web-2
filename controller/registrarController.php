@@ -10,7 +10,10 @@ class RegistrarController extends Controller {
 		}
 		function mostrarRegistro(){
     		$this->view->registrarse();
-    	}
+		}
+		function mostrarIniciarSesion(){
+			$this->view->iniciaSesion();
+		}
 
 	}
 ?>

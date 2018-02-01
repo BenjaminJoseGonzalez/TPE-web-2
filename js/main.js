@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	$('#deporte').on("click","li a", function(ev){
+	$('#deporte').on("click","a", function(ev){
 		ev.preventDefault();
 		var id_deporte = $(this).attr("id_deporte");
 		$.ajax({
@@ -96,6 +96,22 @@ $(document).ready(function(){
 			}
 		});
 	});
+	$("#wrap").on("click", "section #lnkIniSession" , function(ev){
+		ev.preventDefault();
+		console.log("ad");
+		$.ajax({
+			method: 'GET',
+			url:'index.php?action=inicia_session',
+			datatype:'HTML',
+			cache:false,
+			success: function(data){
+				$("#wrap").html(data);
+			},
+			error: function(){
+				alert("error");
+			}
+		});
+	});
 
 	$('#wrap').on("click", "article #info", function(ev){
 		ev.preventDefault();
@@ -167,13 +183,14 @@ $(document).ready(function(){
 
 	$('#wrap').on("click", "article #btn-registro", function(ev){
 		ev.preventDefault();
+		console.log("entre");
 		$.ajax({
 			method: 'POST',
 			url:'index.php?action=agregar_usuario',
 		    data:$("#registrar").serialize(),
 		    cache:false,
 			success: function(data){
-				document.location.href="index.php";
+				
 			},
 			error: function(){
 				alert("error");

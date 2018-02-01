@@ -34,6 +34,10 @@
       $contactoController = new ContactoController();
       $contactoController->mostrarContacto();
     break;
+    case ConfigApp::$ACTION_INICIA_SESSION:
+      $registrarController = new RegistrarController();
+      $registrarController->mostrarIniciarSesion();
+    break;
     case ConfigApp::$ACTION_AGREGAR_CONTACTO:
       $contactoController = new ContactoController();
       $contactoController->agregarContacto();

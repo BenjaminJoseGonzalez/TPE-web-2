@@ -16,6 +16,7 @@
 		public static $ACTION_AGREGAR_USUARIO = 'agregar_usuario';
 		public static $ACTION_LOGIN = 'login';
 		public static $ACTION_LOGOUT = 'logout';
+		public static $ACTION_INICIA_SESSION = 'inicia_session';
 
 		
 

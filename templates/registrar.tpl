@@ -9,37 +9,20 @@
         </div>
 
         <div>
-          <label >Usuario</label>
+          <label >Usiario</label>
           <input type="text" class="text-box" id="usuario" name="usuario" placeholder="e-mail">
         </div>
 
         <div>
           <label >Contrasenia</label>
-          <input type="password" class="text-box" id="contraseña" name="contraseña" placeholder="contraseña">
+          <input type="password" class="text-box" id="pasword" name="pasword" placeholder="contraseña">
         </div>
+        <br>
 
-        <a Href="" class="button"  id="btn-registro">Enviar</a>
+        <a href="" class="btn btn-outline-secondary"  id="btn-registro">Enviar</a>
 
       </form>
     </div>
-
-    <div class="form">  
-      <form id="logIn">
-
-        <div>
-          <label >Usuario</label>
-          <input type="text" class="text-box" id="usuario" name="usuario" placeholder="e-mail">
-        </div>
-
-        <div>
-          <label >Contrasenia</label>
-          <input type="password" class="text-box" id="contraseña" name="contraseña" placeholder="contraseña">
-        </div>
-
-        <a Href="" class="button"  id="btn-logIn">logIn</a>
-
-      </form>
-
-    </div>     
+    <span>ya tienes cuenta? </span><a id="lnkIniSession" href="">inicia sesion</a>     
   </section>
 </article>

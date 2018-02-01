@@ -1,5 +1,5 @@
 <article>
-  <table class="table">
+  <table class="table table-responsive">
     <thead>
       <th>Imagen</th>
       <th>Producto</th>
@@ -39,8 +39,7 @@
         <option val="4">4</option>
         <option val="5">5</option>
       </select>
-      <a Href="" class="button"  id="btn-enviarComentario">enviar</a>
-  </form>
-   {/if}
-
+      <a Href="" class="btn btn-outline-secondary"  id="btn-enviarComentario">enviar</a>
+    </form>
+  {/if}
 </article>

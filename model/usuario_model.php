@@ -4,7 +4,7 @@ class UsuarioModel extends Model {
 
 	function getUsuario($usuario){
 
-		$consulta = $this->db->prepare("SELECT * FROM usuarios WHERE email = ? ");
+		$consulta = $this->db->prepare("SELECT * FROM usuario WHERE email = ? ");
 		$consulta->execute(array($usuario));
 		$usuario = $consulta->fetchAll();
 
@@ -14,26 +14,25 @@ class UsuarioModel extends Model {
 			return 404;
 	}
 
-	function agragarUsuario($usuario,$contrasenia){
-		
-		$consulta = $this->db->prepare('INSERT INTO usuarios (email,contraseña) VALUES(?,?)');
-		$consulta->execute(array($usuario,$contrasenia));
+	function agregarUsuario($usuario,$password){
+		$consulta = $this->db->prepare('INSERT INTO usuario (email,pasword) VALUES(?,?)');
+		$consulta->execute(array($usuario,$password));
 	}
 	function getComentarios(){
-		$consulta = $this->db->prepare("SELECT * FROM comentarios");
+		$consulta = $this->db->prepare("SELECT * FROM comentario");
 		$consulta->execute();
 		return $consulta->fetchAll();
 
 	}
 
 	function agregarComentario($puntaje,$comentario, $usuario){
-		$consulta = $this->db->prepare('INSERT INTO comentarios(puntaje,comentario,usuario) VALUES(?,?,?)');
+		$consulta = $this->db->prepare('INSERT INTO comentario(puntaje,comentario,usuario) VALUES(?,?,?)');
 		$consulta->execute(array($puntaje,$comentario,$usuario));
 
 		return "Se cargo exitosamente";
 	}
 	function borrarComentario($id_comentario){
-		$consulta = $this->db->prepare('DELETE FROM comentarios WHERE id_comentario = (?)');
+		$consulta = $this->db->prepare('DELETE FROM comentario WHERE id_comentario = (?)');
 		$consulta->execute(array($id_comentario));
 		return "Se borro un comentario";
 	}

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.14, created on 2017-02-22 01:36:59
+<?php /* Smarty version Smarty-3.1.14, created on 2018-02-01 00:36:35
          compiled from ".\templates\header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1202558acdd2b58f8b8-04669726%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:210405a725303b939b6-30189490%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '10e0737838b4a574ef135d0c601e7b602cfaf37a' => 
     array (
       0 => '.\\templates\\header.tpl',
-      1 => 1487721189,
+      1 => 1517360123,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1202558acdd2b58f8b8-04669726',
+  'nocache_hash' => '210405a725303b939b6-30189490',
   'function' => 
   array (
   ),
@@ -21,30 +21,42 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.14',
-  'unifunc' => 'content_58acdd2b595b28_30060571',
+  'unifunc' => 'content_5a725303bb6536_26295459',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58acdd2b595b28_30060571')) {function content_58acdd2b595b28_30060571($_smarty_tpl) {?><header>
-	<div class="izq">
-		<a id="lnkHome" href="">home</a>
+<?php if ($_valid && !is_callable('content_5a725303bb6536_26295459')) {function content_5a725303bb6536_26295459($_smarty_tpl) {?>
+
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<button class="navbar-toggler navbar-toggler-right" type="button" 
+		data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+		aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" id="lnkHome" href="">Home</a>
+
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Deportes
+				</a>
+				<div id="deporte" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" id_deporte="1" href="">Bike</a>
+					<a class="dropdown-item" id_deporte="2" href="">Skate</a>
+				</div>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" id="lnkRidersbike" href=""> Riders <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" id="lnkContacto" href=""> Contacto <span class="sr-only">(current)</span></a>
+			</li>
+			<?php if ($_smarty_tpl->tpl_vars['logueo']->value!=false){?>
+				<li class="nav-item active"><a class="nav-link" id="lnkAdmin" href="">Admin</a></li> 
+				<li class="nav-item active"><a class="nav-link" id="lnkLogOut" href="">Cerrar session</a></li>
+			<?php }else{ ?>
+				<li class="nav-item active"><a class="nav-link" id="lnkRegistro" href="">Registrarse</a></li>
+			<?php }?>
+		</ul>	
 	</div>
-	<div class="der">
-		<nav>
-			<ul>
-				<li class="dropdown"> deporte
-						<ul id="deporte"class="dropdown-content">
-							<li><a id_deporte="1" href="">bike</a></li>
-							<li><a id_deporte="2" href="">skate</a></li>
-						</ul>
-				</li>
-				<li><a id="lnkRidersbike" href="">riders</a></li>
-				<li><a id="lnkContacto" href="">contacto</a></li>
-				<?php if ($_smarty_tpl->tpl_vars['logueo']->value!=false){?>
-					<li><a id="lnkAdmin" href="">admin</a></li> 
-					<li><a id="lnkLogOut" href="">cerrar session</a></li>
-				<?php }else{ ?>
-					<li><a id="lnkRegistro" href="">registrarse</a></li>
-				<?php }?>
-			</ul>
-		</nav>
-	</div>
-</header><?php }} ?>
+</nav>
+<?php }} ?>
