@@ -74,6 +74,7 @@ $(document).ready(function(){
 			cache:false,
 			success: function(data){
 				$("#wrap").html(data);
+				
 			},
 			error: function(){
 				alert("error");
@@ -98,7 +99,6 @@ $(document).ready(function(){
 	});
 	$("#wrap").on("click", "section #lnkIniSession" , function(ev){
 		ev.preventDefault();
-		console.log("ad");
 		$.ajax({
 			method: 'GET',
 			url:'index.php?action=inicia_session',
@@ -183,14 +183,17 @@ $(document).ready(function(){
 
 	$('#wrap').on("click", "article #btn-registro", function(ev){
 		ev.preventDefault();
-		console.log("entre");
 		$.ajax({
 			method: 'POST',
 			url:'index.php?action=agregar_usuario',
 		    data:$("#registrar").serialize(),
 		    cache:false,
 			success: function(data){
+				console.log(data);
 				
+				if(data == "registrado correctamente"){
+					document.location.href="index.php";
+				}
 			},
 			error: function(){
 				alert("error");
@@ -222,8 +225,15 @@ $(document).ready(function(){
 		    data: $("#comentarios").serialize(),
 		    cache:false,
 			success: function(data){
-				alert(data);
-				data=json.parse(data);
+				var nodeDIV = document.createElement("DIV");
+				var nodeP = document.createElement("P");
+				var textP1 = document.createTextNode("Puntaje: <b>{$comentario['puntaje']}</b> Usuario: <b>{$comentario['nombre']}</b>");
+				var textP2 = document.createTextNode("Comentario: <br />{$comentario['comentario']}");
+				nodeDIV.appendChild(nodeP);
+				nodeP.appendChild(textP1);
+				nodeDIV.appendChild(nodeP);
+				nodeP.appendChild(textP2);
+				document.getElementById('muestraComentarios').appendChild(nodeDIV);
 			},
 			error: function(data){
 				alert("error");

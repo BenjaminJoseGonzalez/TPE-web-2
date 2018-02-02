@@ -19,7 +19,7 @@ class ComentarioAPI extends Api{
 				}
 			break;
 			case 'POST':
-				return $this->model->agregarComentario($_REQUEST['puntaje'], $_REQUEST['comentario'],$_REQUEST['usuario']);
+				return $this->model->agregarComentario($_REQUEST['puntaje'], $_REQUEST['comentario'],$_REQUEST['nombre']);
 			break;
 			case 'DELETE':
 				if (count($this->args) > 0) {

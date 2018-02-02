@@ -28,7 +28,7 @@
 			{if $logueo != false}
 				<li class="nav-item active"><a class="nav-link" id="lnkAdmin" href="">Admin</a></li> 
 				<li class="nav-item active"><a class="nav-link" id="lnkLogOut" href="">Cerrar session</a></li>
-			{else }
+			{else}
 				<li class="nav-item active"><a class="nav-link" id="lnkRegistro" href="">Registrarse</a></li>
 			{/if}
 		</ul>	

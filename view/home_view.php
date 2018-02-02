@@ -4,6 +4,7 @@
 	class HomeView extends View{
 	
 		function mostrarDefault($logueo){
+			echo($logueo);
 			$this->smarty->assign('logueo', $logueo);
 			$this->smarty->display('index.tpl');
 		}
@@ -12,10 +13,11 @@
 			$this->smarty->display('home.tpl');
 		}
 
-		function mostrarPartes($session,$partes,$comentarios){
+		function mostrarPartes($session,$partes,$comentarios,$id_usuario){
 			$this->smarty->assign('partes',$partes);
 			$this->smarty->assign('comentarios',$comentarios);
 			$this->smarty->assign('session',$session);
+			$this->smarty->assign('id_usuario',$id_usuario);
 			
 			$this->smarty->display('partes.tpl');
 		}

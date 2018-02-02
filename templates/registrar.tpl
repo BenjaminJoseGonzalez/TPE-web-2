@@ -7,15 +7,15 @@
           <label >Nombre</label>
           <input type="text" class="text-box" id="nombre" name="nombre" placeholder="nombre">
         </div>
-
+<br>
         <div>
-          <label >Usiario</label>
-          <input type="text" class="text-box" id="usuario" name="usuario" placeholder="e-mail">
+          <label >     Email</label>
+          <input type="text" class="text-box" id="email" name="email" placeholder="e-mail">
         </div>
 
         <div>
-          <label >Contrasenia</label>
-          <input type="password" class="text-box" id="pasword" name="pasword" placeholder="contraseña">
+          <label >Contraseña</label>
+          <input type="password" class="text-box" id="password" name="password" placeholder="contraseña">
         </div>
         <br>
 

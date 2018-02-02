@@ -9,7 +9,7 @@ class RegistrarController extends Controller {
 			$this->view = new homeView();
 		}
 		function mostrarRegistro(){
-    		$this->view->registrarse();
+			$this->view->registrarse();
 		}
 		function mostrarIniciarSesion(){
 			$this->view->iniciaSesion();

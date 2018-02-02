@@ -9,15 +9,16 @@ class UsuarioController extends Controller{
 		$this->view = new homeView();
 	}
 
-	function logIn($usuario,$contrasenia){
-
-		$nombre = $this->model->getUsuario($usuario);
+	function logIn(){
+		$email = $_REQUEST['email'];
+		$password = $_REQUEST['password'];
+		$nombre = $this->model->getUsuario($email);
 		if($nombre != 404){
-			echo var_dump($nombre);
-			if($nombre[0]['contraseña'] == $contrasenia){
+			//	echo var_dump($nombre[0]['password']);
+			if($nombre[0]['password'] == $password){
 				session_start();
-				$_SESSION['usuario'] = $usuario;
-				
+				$_SESSION['email'] = $email;
+				$_SESSION['nombre']= $nombre[0]['nombre'];
 			}
 			else
 				return 404;
@@ -39,7 +40,7 @@ class UsuarioController extends Controller{
 		if(strlen(session_id()) < 1){
 			session_start();
 		}	
-		if(isset($_SESSION['usuario'])){		
+		if(isset($_SESSION['email'])){		
 			return true;
 		}
 		else
@@ -47,13 +48,16 @@ class UsuarioController extends Controller{
 	}
 
 	function agregarUsuario(){
-		if(isset($_REQUEST['usuario']) && isset($_REQUEST['pasword'])){
+		if(isset($_REQUEST['nombre']) && isset($_REQUEST['email']) && isset($_REQUEST['password'])){
 			
-		    $usuario = $_REQUEST['usuario'];
-			$password = $_REQUEST['pasword'];
-			echo ($usuario + "sdd");
-		    $this->model->agregarUsuario($usuario,$password);
-
+			$email = $_REQUEST['email'];
+			$nombre = $_REQUEST['nombre'];
+			$password = $_REQUEST['password'];
+			$prueba = $this->model->agregarUsuario($nombre,$email,$password);
+			if($prueba == 1){
+				$this->logIn($email,$password);
+				echo('registrado correctamente');
+			}
 		}
     
     }

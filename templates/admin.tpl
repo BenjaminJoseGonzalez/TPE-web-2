@@ -95,7 +95,7 @@
           <tbody>
           {foreach $comentarios as $comentario}
             <tr id="{$comentario[0]}">
-              <td>{$comentario['usuario']}</td>
+              <td>{$comentario['nombre']}</td>
               <td>{$comentario['puntaje']}</td>
               <td>{$comentario['comentario']}</td>
               <td> <a class="icon-cancel-circle btn_borrar_comentario" href="" id_comentario="{$comentario[0]}"></a></td>

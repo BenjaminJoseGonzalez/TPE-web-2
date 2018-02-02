@@ -14,19 +14,24 @@ class UsuarioModel extends Model {
 			return 404;
 	}
 
-	function agregarUsuario($usuario,$password){
-		$consulta = $this->db->prepare('INSERT INTO usuario (email,pasword) VALUES(?,?)');
-		$consulta->execute(array($usuario,$password));
+	function agregarUsuario($nombre,$email,$password){
+		$consulta = $this->db->prepare('INSERT INTO usuario (nombre,email,password) VALUES(?,?,?)');
+		$exect = $consulta->execute(array($nombre,$email,$password));
+		
+		if(count($exect)>0)
+			return $exect;
+		else 
+			return 404;
 	}
 	function getComentarios(){
-		$consulta = $this->db->prepare("SELECT * FROM comentario");
+		$consulta = $this->db->prepare("SELECT * FROM comentario c JOIN usuario u ON c.id_usuario = u.id_usuario");
 		$consulta->execute();
 		return $consulta->fetchAll();
 
 	}
 
 	function agregarComentario($puntaje,$comentario, $usuario){
-		$consulta = $this->db->prepare('INSERT INTO comentario(puntaje,comentario,usuario) VALUES(?,?,?)');
+		$consulta = $this->db->prepare('INSERT INTO comentario(puntaje,comentario,id_usuario) VALUES(?,?,?)');
 		$consulta->execute(array($puntaje,$comentario,$usuario));
 
 		return "Se cargo exitosamente";

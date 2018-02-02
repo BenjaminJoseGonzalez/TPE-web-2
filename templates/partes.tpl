@@ -17,10 +17,10 @@
     {/foreach}
     </tbody>
   </table>
-  <div>
+  <div id="muestraComentarios">
     {foreach $comentarios as $comentario}
     <div>
-      <p>Puntaje: <b>{$comentario['puntaje']}</b> Usuario: <b>{$comentario['usuario']}</b> </p>
+      <p>Puntaje: <b>{$comentario['puntaje']}</b> Usuario: <b>{$comentario['nombre']}</b> </p>
       <p>Comentario: <br />
         {$comentario['comentario']}
       </p>
@@ -30,7 +30,7 @@
   {if $session }
     <h1>{$session}</h1>
     <form id="comentarios">
-      <input type="hidden" name="usuario" value="{$session}">
+      {if $id_usuario} <input type="hidden" name="nombre" value="{$id_usuario}"> {/if}
       <input type="text" class="text-box" name="comentario" id="comentario" placeholder="comentario...">
       <select name = "puntaje">
         <option val="1">1</option>

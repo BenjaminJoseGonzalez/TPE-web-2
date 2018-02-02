@@ -15,8 +15,9 @@
     	function mostrarDeportes(){
             $id_deporte = $_REQUEST['id_deporte'];
             session_start();
-            if (isset($_SESSION['usuario'])) {
-                $session = $_SESSION['usuario'];
+            if (isset($_SESSION['email'])) {
+                $session = $_SESSION['nombre'];
+                $email = $_SESSION['email'];
             }
             else {
                 $session = null;
@@ -24,7 +25,12 @@
 
     		$partes = $this->model->getPartesDeporte($id_deporte);
             $comentarios = $this->modelUsuario->getComentarios();
-    		$this->view->mostrarPartes($session, $partes, $comentarios);
+            if($email){
+                $id_usuario = $this->modelUsuario->getUsuario($email)[0]['id_usuario'];
+            } else {
+                $id_usuario = null;
+            }
+    		$this->view->mostrarPartes($session, $partes, $comentarios, $id_usuario);
     	}
 
     	function agregarParte(){

@@ -68,7 +68,7 @@
     break;
     case ConfigApp::$ACTION_LOGIN:
       $usuarioController = new UsuarioController();
-      $usuarioController->logIn($_REQUEST['usuario'], $_REQUEST['contraseña']);
+      $usuarioController->logIn();
     break;
     case ConfigApp::$ACTION_LOGOUT:
       $usuarioController = new UsuarioController();
@@ -76,7 +76,7 @@
     break;
     case ConfigApp::$ACTION_AGERGAR_COMENTARIO:
       $usuarioController = new UsuarioController();
-      $usuarioController->agregarCoentario();
+      $usuarioController->agregarComentario();
     break;
     default:
       echo 'Pagina no encontrada';
